@@ -123,9 +123,9 @@ _VENV_PYTHON = _pick_python()
 #: and its condition cannot disagree -- they DID once, and a reader
 #: would have trusted the label.
 #:
-#: Measured on the deployed service after the video removal: 49 paths,
-#: 51 routes.  The families: 18 under /api/v1/, 26 under /api/ (the UI
-#: family), 5 serving the page itself.
+#: Measured on the deployed service: 50 paths, 52 routes.  The
+#: families: 18 under /api/v1/, 27 under /api/ (the UI family), 5
+#: serving the page itself.
 EXPECT_PATHS = 50
 EXPECT_ROUTES = 52
 EXPECT_V1_PATHS = 18
