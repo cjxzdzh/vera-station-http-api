@@ -1,0 +1,59 @@
+{
+  "bundle_name": "vera-station-http-api",
+  "bundle_version": "1.0.0",
+  "source_project": "vera-station",
+  "contents_self_contained": true,
+  "runtime_required": "python3 (3.9+); the skill itself is documentation and needs no runtime",
+  "entrypoint": "SKILL.md",
+  "skill_name": "vera-station-http-api",
+  "measured_against": {
+    "live_service_port": 8800,
+    "surface_paths": 50,
+    "surface_routes": 52,
+    "measured_on": "2026-10-31"
+  },
+  "verification": {
+    "script": "scripts/verify_api_doc.py",
+    "checks": 60,
+    "expected": "60 passed, 0 failed",
+    "mutation_tested": true,
+    "mutations_run": 8,
+    "mutations_caught": 8,
+    "note": "The eight mutations corrupted the DOCUMENTATION; all eight were caught. The verifier ties every quoted value to what the live service answered. On a host with no vera-preview.service unit the two deployment checks are skipped, so the count is 60 rather than 62."
+  },
+  "cross_platform": {
+    "package": "vera-station-universal-v1.0.0.tar.gz",
+    "note": "ONE archive serves all three platforms: Windows 10 and 11 ship bsdtar, so `tar -xf` opens the tar.gz there as it does on Linux and macOS. MEASURED on a real Windows 11 machine: the extracted run.bat kept its CRLF line endings and `run.bat test` passed all 92 checks. The verifier finds the venv interpreter in either layout and skips the systemd checks where there is no systemctl, so it runs unchanged on Windows."
+  },
+  "install": {
+    "one_copy_one_name": true,
+    "warning": "Two directories with the same skill name make the name ambiguous and the skill unloadable."
+  },
+  "privacy": {
+    "contains_lan_address": false,
+    "contains_device_serial": false,
+    "contains_device_mac": false,
+    "note": "The operator's LAN address, device serial and MAC are all placeholdered. The verifier takes the host from VERO_LIVE_HOST."
+  },
+  "files": {
+    "SKILL.md": {
+      "sha256": "f7d8b406677decfea15afeb34d7268d3726305ecc024874f23dbff5158a6b409",
+      "bytes": 61024
+    },
+    "INSTALL.md": {
+      "sha256": "81658bb73f58f2a29d7fc2071c35c077dec2d526dea6b5ce5ad92dbc8a27cba8",
+      "bytes": 8342
+    },
+    "references/VERO-8800-API.md": {
+      "sha256": "9972650d663a2c77a4af51a8a64971f603a008faf9bde7d2a3b7a417076d3c60",
+      "bytes": 26666
+    },
+    "scripts/verify_api_doc.py": {
+      "sha256": "1f0eeeb00dc5579bd87923eee1879a8f002afa257c3f361d915bd029f1153667",
+      "bytes": 28182
+    }
+  },
+  "description": "The HTTP API of Vero Station -- a cross-platform controller for AIKE's Vero and Mira devices -- as a reference document for an agent, with a verifier that checks every quoted value against a running service.",
+  "repository": "https://github.com/cjxzdzh/vero-station",
+  "license": "MIT"
+}
