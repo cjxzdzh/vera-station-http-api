@@ -42,12 +42,12 @@
   "license": "MIT",
   "files": {
     "SKILL.md": {
-      "sha256": "6efd10533ce75978f64c40717954c22794e93859fb16e5e3042a6577d90b8ec1",
-      "bytes": 61298
+      "sha256": "5019f154a9a484525c3bc94c6a6ab26c0f283952bdca53a0bf4e7430946cf0b6",
+      "bytes": 61513
     },
     "INSTALL.md": {
-      "sha256": "8ec321b5b658ec96b22180b55155660a2ce6d65c7cb7d4948338535a2a6a37a3",
-      "bytes": 8653
+      "sha256": "ce3ece16580da62887c11b03b74a5efb440a6bdc624f3703c17eb8d4377921c7",
+      "bytes": 8866
     },
     "references/VERO-8800-API.md": {
       "sha256": "be6f5a6431969e478f1d849e6857855a7d9305edd877b480746819256ba3c8f2",
